@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ecotrack-gtn.vercel.app/sitemap.xml

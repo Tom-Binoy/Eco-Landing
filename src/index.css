@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-eco-green: #16a34a;
+  --color-eco-green-light: #22c55e;
+  --color-eco-green-glow: rgba(22,163,74,0.18);
+  --color-eco-bg: #F5F5F0;
+  --color-eco-dark: #2b2a27;
+  --color-eco-card: #302f2c;
+  --color-eco-text: #1a1a18;
+  --color-eco-muted: #6b6a68;
+  --color-eco-faint: #a8a5a0;
+  --color-eco-border: rgba(0,0,0,0.08);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Georgia', serif;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+  margin: 0;
+  background: #0f0e0b;
+  color: #eeeeee;
+  font-family: 'Georgia', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes ripple {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50%       { opacity: 0.05; transform: scale(2); }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes typingDot {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40%            { transform: translateY(-4px); opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-up { animation: fadeUp 0.7s ease both; }
+.animate-fade-in { animation: fadeIn 0.5s ease both; }
+.animate-float   { animation: float 4s ease-in-out infinite; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+
+.noise-bg {
+  position: relative;
+}
+.noise-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+.chat-bubble-in  { animation: slideIn 0.3s ease both; }
